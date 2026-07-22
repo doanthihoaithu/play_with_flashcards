@@ -1,0 +1,10 @@
+# Copy this file to config.yaml and adjust as needed.
+# config.yaml is gitignored so you can keep local overrides.
+
+app_title: "English Flashcards"
+
+# Path to the folder containing deck *.yaml files, relative to the project root.
+decks_dir: "decks"
+
+# Whether new sessions start with cards shuffled.
+shuffle_by_default: false

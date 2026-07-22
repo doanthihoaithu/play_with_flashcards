@@ -21,6 +21,18 @@ def _format_highlighted(text: str) -> str:
     return _BOLD_MARKERS.sub(r"<strong>\1</strong>", escaped)
 
 
+def _card_font_size(text: str) -> str:
+    """Pick a smaller font size the longer the (plain) text is."""
+    length = len(_BOLD_MARKERS.sub(r"\1", text))
+    if length <= 40:
+        return "clamp(0.85rem, 3.2vw, 1.15rem)"
+    if length <= 90:
+        return "clamp(0.75rem, 2.6vw, 1rem)"
+    if length <= 160:
+        return "clamp(0.65rem, 2.2vw, 0.9rem)"
+    return "clamp(0.55rem, 1.8vw, 0.78rem)"
+
+
 def load_config() -> dict:
     config: dict = {}
     example_path = CONF_DIR / "config.example.yaml"
@@ -43,6 +55,8 @@ def render_card(card: Card) -> None:
     front = html.escape(card.vietnamese_text)
     back = _format_highlighted(card.english_text)
     tag = html.escape(card.key_infor)
+    front_size = _card_font_size(card.vietnamese_text)
+    back_size = _card_font_size(card.english_text)
 
     card_html = f"""
     <style>
@@ -79,6 +93,7 @@ def render_card(card: Card) -> None:
         justify-content: center;
         padding: 20px;
         box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+        overflow-y: auto;
       }}
       .flip-card-front {{
         background: linear-gradient(135deg, #4facfe 0%, #00c6ff 100%);
@@ -118,12 +133,12 @@ def render_card(card: Card) -> None:
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="badge">{tag}</div>
-          <div class="card-text">{front}</div>
+          <div class="card-text" style="font-size: {front_size};">{front}</div>
           <div class="hint">Tap card to see English</div>
         </div>
         <div class="flip-card-back">
           <div class="badge">{tag}</div>
-          <div class="card-text">{back}</div>
+          <div class="card-text" style="font-size: {back_size};">{back}</div>
           <div class="hint">Tap card to see Vietnamese</div>
         </div>
       </div>

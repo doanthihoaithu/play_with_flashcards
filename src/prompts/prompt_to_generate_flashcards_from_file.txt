@@ -1,0 +1,33 @@
+Using the uploaded source document, create English study flashcards and save as a CSV file with these exact columns: card_id, key_infor, vietnamese_meaning, english_meaning.
+
+RULES:
+
+1. SENTENCE SPLITTING
+   - Split the source text into individual sentences. Each sentence becomes one flashcard (one CSV row).
+   - Do not combine multiple complete sentences into one card.
+   - Do not skip any sentences, except titles, headers, or fragments with no complete meaning on their own.
+   - If a sentence is very short (fewer than 5 words) or purely functional (e.g., "Thank you.", a section heading, or a sentence fragment split by ellipses), merge it with the neighboring sentence it belongs to, so the card has complete meaning. Note in vietnamese_meaning (in parentheses) that sentences were merged.
+
+2. key_infor (front side, part 1)
+   - 2-3 short English words or phrases from the sentence, separated by commas, chosen to help the learner recall the full sentence.
+   - If the sentence has 12 or more words, use 5-6 items instead of 2-3.
+   - These must be actual words/phrases lifted from the sentence — not a paraphrased description of its meaning.
+
+3. vietnamese_meaning (front side, part 2)
+   - A full, natural, accurate Vietnamese translation of the entire sentence — not a word-by-word gloss.
+
+4. english_meaning (back side)
+   - The full original English sentence, unmodified, exactly as it appears in the source.
+   - Bold the 1-3 most valuable vocabulary items, phrases, or collocations using **double asterisks**.
+   - Prioritize less common or more useful expressions over basic vocabulary.
+   - Only 1-3 bolded spans total per sentence, even if the sentence is long.
+
+5. NUMBERING & ORDER
+   - Number flashcards sequentially starting at 1 (card_id column), preserving the original order of the source text.
+
+6. OUTPUT FORMAT
+   - A single CSV file with header row: card_id,key_infor,vietnamese_meaning,english_meaning
+   - Wrap every field value in double quotes to handle commas/special characters safely.
+   - One row per flashcard — no extra commentary rows, no markdown formatting inside the CSV.
+
+Process the entire source document from beginning to end and generate flashcards for every sentence.

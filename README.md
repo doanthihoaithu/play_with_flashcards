@@ -14,19 +14,20 @@ streamlit run src/app.py
 
 ## Adding decks
 
-Drop a new `*.yaml` file into `decks/`:
+Drop a new `*.csv` file into `decks/`. The deck name is taken from the file
+name (e.g. `daily_verbs.csv` becomes "Daily Verbs"), and each row is one card:
 
-```yaml
-name: "My Deck"
-cards:
-  - key_infor: "noun"
-    vietnamese_text: "quả táo"
-    english_text: "apple"
+```csv
+key_infor,vietnamese_text,english_text
+noun,quả táo,apple
 ```
 
 - `key_infor` — a short tag shown on the card (e.g. part of speech, topic).
-- `vietnamese_text` — shown on the front.
-- `english_text` — shown on the back.
+- `vietnamese_text` — shown on the front. (`vietnamese_meaning` also accepted.)
+- `english_text` — shown on the back. (`english_meaning` also accepted.)
+
+Other columns (e.g. `card_id`) are ignored, and rows missing the Vietnamese
+or English value are skipped.
 
 Tap/click a card to flip it. Use the sidebar to pick a deck and toggle
 shuffling.

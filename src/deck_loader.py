@@ -1,8 +1,11 @@
+import csv
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import List
 
-import yaml
+# Accepted CSV column names for each field, in priority order.
+_VIETNAMESE_COLUMNS = ("vietnamese_text", "vietnamese_meaning")
+_ENGLISH_COLUMNS = ("english_text", "english_meaning")
 
 
 @dataclass
@@ -18,28 +21,42 @@ class Deck:
     cards: List[Card] = field(default_factory=list)
 
 
-def load_decks(decks_dir: Path) -> List[Deck]:
-    """Load every *.yaml deck file in decks_dir into Deck objects.
+def _first_present(row: dict, columns) -> str:
+    for column in columns:
+        if row.get(column):
+            return row[column].strip()
+    return ""
 
-    Files that are missing required fields or contain no cards are skipped.
+
+def _deck_name_from_path(path: Path) -> str:
+    return path.stem.replace("_", " ").replace("-", " ").strip().title()
+
+
+def load_decks(decks_dir: Path) -> List[Deck]:
+    """Load every *.csv deck file in decks_dir into Deck objects.
+
+    Each row is one card. Expected columns are `key_infor`, a Vietnamese
+    column (`vietnamese_text` or `vietnamese_meaning`), and an English column
+    (`english_text` or `english_meaning`). Rows missing the Vietnamese or
+    English value are skipped; any other columns (e.g. `card_id`) are ignored.
     """
     decks: List[Deck] = []
     if not decks_dir.exists():
         return decks
 
-    for path in sorted(decks_dir.glob("*.yaml")):
-        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-        raw_cards = data.get("cards") or []
-        cards = [
-            Card(
-                key_infor=str(c.get("key_infor", "")),
-                vietnamese_text=str(c.get("vietnamese_text", "")),
-                english_text=str(c.get("english_text", "")),
-            )
-            for c in raw_cards
-            if c.get("vietnamese_text") and c.get("english_text")
-        ]
+    for path in sorted(decks_dir.glob("*.csv")):
+        with path.open(newline="", encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            cards = [
+                Card(
+                    key_infor=(row.get("key_infor") or "").strip(),
+                    vietnamese_text=_first_present(row, _VIETNAMESE_COLUMNS),
+                    english_text=_first_present(row, _ENGLISH_COLUMNS),
+                )
+                for row in reader
+            ]
+            cards = [c for c in cards if c.vietnamese_text and c.english_text]
         if cards:
-            decks.append(Deck(name=data.get("name", path.stem), cards=cards))
+            decks.append(Deck(name=_deck_name_from_path(path), cards=cards))
 
     return decks

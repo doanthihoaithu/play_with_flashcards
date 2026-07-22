@@ -1,0 +1,15 @@
+The Strategy’s overarching objective is to architect a unified, modern, secure, reliable, interoperable, and shared national data ecosystem. It strives to forge data into a strategic resource, a vital production input, and a new driving force for national governance, the digital economy, and digital society.
+
+It also endeavours to expedite the application of artificial intelligence, high‑performance computing, and strategic digital technologies in analysis, forecasting, policy formulation, and the delivery of intelligent services.
+
+The Strategy dictates that at least 50,000 officials and public servants will be trained and upskilled under the National Data Governance Training Framework, equipping them with the capacity to govern, analyse, and exploit data. Around 300,000 enterprise workers will receive training in data skills, data analysis, and AI applications.
+
+A core team of at least 5,000 data specialists will be cultivated across state agencies, businesses, educational institutions, and scientific and technological organisations.
+
+In addition, more than 50 higher education institutions will offer programmes and majors in data science, data governance, artificial intelligence, high‑performance computing, and data security.
+
+It envisions that by 2045, 100% of leadership, direction, governance, and operational activities of Party and State agencies will be underpinned by data; at least 90% of major decisions and policies will be formulated, evaluated, and forecast using data analysis and artificial intelligence.
+
+All eligible public services will be delivered fully online; at least 90% of essential public services will be provided proactively, automatically, or personalised based on data; and citizen and business satisfaction will reach 99% or higher.
+
+Viet Nam will master at least 80% of the core platforms, technologies, and products serving data governance, storage, processing, analysis, and protection; and will possess autonomous capabilities in cloud computing, high-performance computing infrastructure, AI infrastructure, AI models, and data security.

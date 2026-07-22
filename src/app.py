@@ -1,5 +1,6 @@
 import html
 import random
+import re
 from pathlib import Path
 
 import streamlit as st
@@ -10,6 +11,14 @@ from deck_loader import Card, load_decks
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 CONF_DIR = PROJECT_ROOT / "conf"
+
+_BOLD_MARKERS = re.compile(r"\*\*(.+?)\*\*")
+
+
+def _format_highlighted(text: str) -> str:
+    """Escape text for HTML, then turn **word** markers into <strong> tags."""
+    escaped = html.escape(text)
+    return _BOLD_MARKERS.sub(r"<strong>\1</strong>", escaped)
 
 
 def load_config() -> dict:
@@ -32,7 +41,7 @@ def new_order(n_cards: int, shuffle: bool) -> list:
 
 def render_card(card: Card) -> None:
     front = html.escape(card.vietnamese_text)
-    back = html.escape(card.english_text)
+    back = _format_highlighted(card.english_text)
     tag = html.escape(card.key_infor)
 
     card_html = f"""
@@ -81,19 +90,23 @@ def render_card(card: Card) -> None:
         transform: rotateY(180deg);
       }}
       .badge {{
-        font-size: 0.75rem;
+        font-size: clamp(1.1rem, 4.5vw, 1.6rem);
+        font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.06em;
         background: rgba(255, 255, 255, 0.35);
-        padding: 4px 12px;
+        padding: 6px 16px;
         border-radius: 999px;
         margin-bottom: 14px;
       }}
-      .main-text {{
-        font-size: clamp(1.3rem, 6vw, 2.2rem);
-        font-weight: 700;
+      .card-text {{
+        font-size: clamp(0.85rem, 3.2vw, 1.15rem);
+        font-weight: 400;
         word-break: break-word;
         line-height: 1.3;
+      }}
+      .card-text strong {{
+        font-weight: 700;
       }}
       .hint {{
         margin-top: 14px;
@@ -105,12 +118,12 @@ def render_card(card: Card) -> None:
       <div class="flip-card-inner">
         <div class="flip-card-front">
           <div class="badge">{tag}</div>
-          <div class="main-text">{front}</div>
+          <div class="card-text">{front}</div>
           <div class="hint">Tap card to see English</div>
         </div>
         <div class="flip-card-back">
           <div class="badge">{tag}</div>
-          <div class="main-text">{back}</div>
+          <div class="card-text">{back}</div>
           <div class="hint">Tap card to see Vietnamese</div>
         </div>
       </div>

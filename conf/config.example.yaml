@@ -3,7 +3,7 @@
 
 app_title: "English Flashcards"
 
-# Path to the folder containing deck *.yaml files, relative to the project root.
+# Path to the folder containing deck *.csv files, relative to the project root.
 decks_dir: "decks"
 
 # Whether new sessions start with cards shuffled.

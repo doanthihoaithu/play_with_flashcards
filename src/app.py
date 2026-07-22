@@ -55,6 +55,7 @@ def render_card(card: Card) -> None:
     front = html.escape(card.vietnamese_text)
     back = _format_highlighted(card.english_text)
     tag = html.escape(card.key_infor)
+    card_id = html.escape(card.card_id)
     front_size = _card_font_size(card.vietnamese_text)
     back_size = _card_font_size(card.english_text)
 
@@ -104,6 +105,14 @@ def render_card(card: Card) -> None:
         color: #063d2b;
         transform: rotateY(180deg);
       }}
+      .card-id {{
+        position: absolute;
+        top: 10px;
+        left: 14px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        opacity: 0.75;
+      }}
       .badge {{
         font-size: clamp(1.1rem, 4.5vw, 1.6rem);
         font-weight: 700;
@@ -132,11 +141,13 @@ def render_card(card: Card) -> None:
     <div class="flip-card" onclick="this.classList.toggle('flipped')">
       <div class="flip-card-inner">
         <div class="flip-card-front">
+          <div class="card-id">#{card_id}</div>
           <div class="badge">{tag}</div>
           <div class="card-text" style="font-size: {front_size};">{front}</div>
           <div class="hint">Tap card to see English</div>
         </div>
         <div class="flip-card-back">
+          <div class="card-id">#{card_id}</div>
           <div class="badge">{tag}</div>
           <div class="card-text" style="font-size: {back_size};">{back}</div>
           <div class="hint">Tap card to see Vietnamese</div>

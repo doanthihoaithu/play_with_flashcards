@@ -10,6 +10,7 @@ _ENGLISH_COLUMNS = ("english_text", "english_meaning")
 
 @dataclass
 class Card:
+    card_id: str
     key_infor: str
     vietnamese_text: str
     english_text: str
@@ -37,8 +38,9 @@ def load_decks(decks_dir: Path) -> List[Deck]:
 
     Each row is one card. Expected columns are `key_infor`, a Vietnamese
     column (`vietnamese_text` or `vietnamese_meaning`), and an English column
-    (`english_text` or `english_meaning`). Rows missing the Vietnamese or
-    English value are skipped; any other columns (e.g. `card_id`) are ignored.
+    (`english_text` or `english_meaning`). A `card_id` column is used if
+    present; otherwise cards are numbered by their row position. Rows missing
+    the Vietnamese or English value are skipped.
     """
     decks: List[Deck] = []
     if not decks_dir.exists():
@@ -49,11 +51,12 @@ def load_decks(decks_dir: Path) -> List[Deck]:
             reader = csv.DictReader(f)
             cards = [
                 Card(
+                    card_id=(row.get("card_id") or "").strip() or str(i),
                     key_infor=(row.get("key_infor") or "").strip(),
                     vietnamese_text=_first_present(row, _VIETNAMESE_COLUMNS),
                     english_text=_first_present(row, _ENGLISH_COLUMNS),
                 )
-                for row in reader
+                for i, row in enumerate(reader, start=1)
             ]
             cards = [c for c in cards if c.vietnamese_text and c.english_text]
         if cards:

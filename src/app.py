@@ -321,14 +321,29 @@ def render_card(card: Card) -> None:
     components.html(card_html, height=300, scrolling=False)
 
 
-def main() -> None:
+def render_introduction_page() -> None:
+    st.title("Welcome to English Flashcards")
+    st.markdown(
+        "A flip-card app for studying English vocabulary and phrases, with "
+        "Vietnamese translations and IPA pronunciation on the back of each card.\n\n"
+        "Use the navigation menu on the left to get started:\n\n"
+        "- **Flashcards** — pick a deck, filter by content type/level/tags, and "
+        "flip through cards at your own pace.\n"
+        "- **Shadowing** — coming soon.\n"
+    )
+
+
+def render_shadowing_page() -> None:
+    st.title("Shadowing")
+    st.info("This page is coming soon — its features will be specified later.")
+
+
+def render_flashcards_page() -> None:
     config = load_config()
-    app_title = config.get("app_title", "English Flashcards")
     decks_dir = PROJECT_ROOT / config.get("decks_dir", "decks")
     default_shuffle = bool(config.get("shuffle_by_default", False))
 
-    st.set_page_config(page_title=app_title, page_icon="\U0001F5C2️", layout="centered")
-    st.title(app_title)
+    st.title("Flashcards")
 
     decks = _load_decks_cached(decks_dir)
     if not decks:
@@ -347,42 +362,49 @@ def main() -> None:
     level_options = sorted({m["level"] for m in deck_meta_list if m.get("level")})
     tag_options = sorted({tag for m in deck_meta_list for tag in m.get("category_tags", [])})
 
-    with st.sidebar:
-        st.header("Decks")
+    st.subheader("Decks")
 
-        selected_content_types: List[str] = []
-        selected_levels: List[str] = []
-        selected_tags: List[str] = []
-        if content_type_options or level_options or tag_options:
-            st.subheader("Filters")
-            if content_type_options:
+    selected_content_types: List[str] = []
+    selected_levels: List[str] = []
+    selected_tags: List[str] = []
+    if content_type_options or level_options or tag_options:
+        st.markdown("**Filters**")
+        filter_cols = st.columns(3)
+        if content_type_options:
+            with filter_cols[0]:
                 selected_content_types = st.multiselect("Content type", content_type_options)
-            if level_options:
+        if level_options:
+            with filter_cols[1]:
                 selected_levels = st.multiselect("Level", level_options)
-            if tag_options:
+        if tag_options:
+            with filter_cols[2]:
                 selected_tags = st.multiselect("Category tags", tag_options)
 
-        def _matches_filters(meta: dict) -> bool:
-            if not meta:
-                return not (selected_content_types or selected_levels or selected_tags)
-            if selected_content_types and meta.get("content_type") not in selected_content_types:
-                return False
-            if selected_levels and meta.get("level") not in selected_levels:
-                return False
-            if selected_tags and not set(meta.get("category_tags", [])) & set(selected_tags):
-                return False
-            return True
+    def _matches_filters(meta: dict) -> bool:
+        if not meta:
+            return not (selected_content_types or selected_levels or selected_tags)
+        if selected_content_types and meta.get("content_type") not in selected_content_types:
+            return False
+        if selected_levels and meta.get("level") not in selected_levels:
+            return False
+        if selected_tags and not set(meta.get("category_tags", [])) & set(selected_tags):
+            return False
+        return True
 
-        filtered_decks = [
-            d for d, meta in zip(decks, deck_meta_list) if _matches_filters(meta)
-        ]
+    filtered_decks = [
+        d for d, meta in zip(decks, deck_meta_list) if _matches_filters(meta)
+    ]
 
-        if not filtered_decks:
-            st.warning("No decks match the selected filters.")
-            st.stop()
+    if not filtered_decks:
+        st.warning("No decks match the selected filters.")
+        st.stop()
 
-        deck_names = [d.name for d in filtered_decks]
+    deck_names = [d.name for d in filtered_decks]
+    deck_col, shuffle_col = st.columns([3, 1])
+    with deck_col:
         selected_name = st.selectbox("Choose a deck to study", deck_names)
+    with shuffle_col:
+        st.markdown("<br>", unsafe_allow_html=True)
         shuffle_on = st.checkbox("Shuffle cards", value=default_shuffle)
 
     deck = next(d for d in filtered_decks if d.name == selected_name)
@@ -394,30 +416,52 @@ def main() -> None:
         st.session_state.order = new_order(len(deck.cards), shuffle_on)
         st.session_state.pos = 0
 
-    order: List[int] = st.session_state.order
-    pos: int = st.session_state.pos
-    total = len(order)
+    @st.fragment
+    def _render_flashcard_section() -> None:
+        # Fragment-scoped: clicking these buttons only reruns this section,
+        # not the whole page, so the deck/filter controls above don't
+        # re-render and the page doesn't jump/scroll on every click.
+        order: List[int] = st.session_state.order
+        pos: int = st.session_state.pos
+        total = len(order)
 
-    st.caption(f"Card {pos + 1} of {total}")
-    st.progress((pos + 1) / total)
+        st.caption(f"Card {pos + 1} of {total}")
+        st.progress((pos + 1) / total)
 
-    current_card = deck.cards[order[pos]]
-    render_card(current_card)
+        current_card = deck.cards[order[pos]]
+        render_card(current_card)
 
-    col_prev, col_shuffle, col_next = st.columns(3)
-    with col_prev:
-        if st.button("◀ Previous", use_container_width=True, disabled=(pos == 0)):
-            st.session_state.pos = max(0, pos - 1)
-            st.rerun()
-    with col_shuffle:
-        if st.button("\U0001F500 Reshuffle", use_container_width=True):
-            st.session_state.order = new_order(len(deck.cards), True)
-            st.session_state.pos = 0
-            st.rerun()
-    with col_next:
-        if st.button("Next ▶", use_container_width=True, disabled=(pos == total - 1)):
-            st.session_state.pos = min(total - 1, pos + 1)
-            st.rerun()
+        col_prev, col_shuffle, col_next = st.columns(3)
+        with col_prev:
+            if st.button("◀ Previous", use_container_width=True, disabled=(pos == 0)):
+                st.session_state.pos = max(0, pos - 1)
+                st.rerun(scope="fragment")
+        with col_shuffle:
+            if st.button("\U0001F500 Reshuffle", use_container_width=True):
+                st.session_state.order = new_order(len(deck.cards), True)
+                st.session_state.pos = 0
+                st.rerun(scope="fragment")
+        with col_next:
+            if st.button("Next ▶", use_container_width=True, disabled=(pos == total - 1)):
+                st.session_state.pos = min(total - 1, pos + 1)
+                st.rerun(scope="fragment")
+
+    _render_flashcard_section()
+
+
+def main() -> None:
+    config = load_config()
+    app_title = config.get("app_title", "English Flashcards")
+    st.set_page_config(page_title=app_title, page_icon="\U0001F5C2️", layout="centered")
+
+    pages = st.navigation(
+        [
+            st.Page(render_introduction_page, title="Introduction", icon="👋", default=True),
+            st.Page(render_flashcards_page, title="Flashcards", icon="\U0001F5C2️"),
+            st.Page(render_shadowing_page, title="Shadowing", icon="🎧"),
+        ]
+    )
+    pages.run()
 
 
 if __name__ == "__main__":

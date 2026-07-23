@@ -4,6 +4,12 @@ A Streamlit flashcard app for studying English vocabulary, with the Vietnamese
 text on the front and the English translation on the back. Works on both
 desktop and mobile.
 
+The app has three pages, listed in the sidebar navigation menu:
+
+- **Introduction** — a short welcome/overview.
+- **Flashcards** — the deck picker, filters, and flip cards described below.
+- **Shadowing** — coming soon.
+
 ## Run
 
 ```bash

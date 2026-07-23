@@ -1,0 +1,33 @@
+Update deck_loader.py and app.py to render the card back as a word-aligned English + IPA display, instead of showing english_meaning and english_ipa as plain text.
+
+CONTEXT
+- Each card's CSV row has: english_meaning_separated_by_space and english_ipa_separated_by_space, both strings with words/IPA-chunks joined by the delimiter "___".
+- These two lists are already word-aligned 1:1 by construction (same word count, same order).
+
+WHAT TO BUILD
+
+1. deck_loader.py
+   - When loading a card, split english_meaning_separated_by_space on "___" into a list of English word tokens (preserve any **bold** markers already in the tokens).
+   - Split english_ipa_separated_by_space on "___" into a list of IPA tokens, in the same order.
+   - Zip the two lists into pairs: [(english_word, ipa_chunk), ...].
+   - If the two lists don't have equal length (data error), fall back gracefully: log a warning and pad the shorter list with empty strings rather than crashing, so the app still renders something.
+   - Expose this paired list on the card object (e.g. card.word_ipa_pairs) for app.py to consume.
+
+2. app.py — card back rendering
+   - For each (word, ipa) pair, render a two-line stacked unit:
+     - Top line: the English word, normal font size/weight (bold styling preserved if the word was marked bold).
+     - Bottom line: the IPA chunk, smaller font size (~60-70% of the word's font size), muted/lighter color (e.g. gray), centered under the word.
+   - Lay these stacked units out horizontally in a single row (flexbox or equivalent), left-to-right, matching original sentence order, with small consistent spacing between units.
+   - If the row is too wide for the viewport/card, allow it to wrap to a new line — but keep each (word, ipa) pair together as one unit; never let a word wrap separately from its IPA.
+   - Punctuation attached to a word (e.g. "photography.") stays attached and appears as part of that same unit — don't split it into its own pair.
+
+3. STYLING
+   - Word font size: match the existing card-back sentence font size currently used for english_meaning.
+   - IPA font size: smaller, per above, non-bold, using a font/character set that renders IPA symbols correctly.
+   - Vertical gap between word and its IPA: small and tight (they should read as one grouped unit, not two separate lines).
+   - Horizontal gap between adjacent word-IPA units: enough to visually separate words, not so much that the sentence looks fragmented.
+
+4. FALLBACK
+   - If a card is missing english_meaning_separated_by_space or english_ipa_separated_by_space (e.g. older CSV rows without these columns), fall back to rendering english_meaning and english_ipa as plain text, same as current behavior.
+
+Please show me the specific diffs/edits to deck_loader.py and app.py, and note any new CSS/style rules you added.

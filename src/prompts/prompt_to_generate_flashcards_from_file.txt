@@ -1,4 +1,4 @@
-Using the uploaded source document, create English study flashcards and save as a CSV file with these exact columns: card_id, key_infor, vietnamese_meaning, english_meaning.
+Using the uploaded source document, create English study flashcards and save as a CSV file with these exact columns: card_id, key_infor, vietnamese_meaning, english_meaning, english_meaning_separated_by_space, english_ipa, english_ipa_separated_by_space.
 
 RULES:
 
@@ -16,18 +16,25 @@ RULES:
 3. vietnamese_meaning (front side, part 2)
    - A full, natural, accurate Vietnamese translation of the entire sentence — not a word-by-word gloss.
 
-4. english_meaning (back side)
-   - The full original English sentence, unmodified, exactly as it appears in the source.
-   - Bold the 1-3 most valuable vocabulary items, phrases, or collocations using **double asterisks**.
-   - Prioritize less common or more useful expressions over basic vocabulary.
-   - Only 1-3 bolded spans total per sentence, even if the sentence is long.
+4. english_meaning and english_meaning_separated_by_space (back side, part 1 — two versions)
+   - english_meaning: the full original English sentence, unmodified, exactly as it appears in the source, with the 1-3 most valuable vocabulary items/phrases/collocations bolded using **double asterisks** (prioritize less common or more useful expressions over basic vocabulary; max 1-3 bolded spans regardless of sentence length).
+   - english_meaning_separated_by_space: take the same sentence, split it into its individual words (split on whitespace; keep punctuation attached to the word it follows, e.g. "photography." stays as one token), then join those word-tokens into a single string using the delimiter "___" (three underscores) instead of spaces. Keep any bold markers attached to their word. Example: "I like photography." → "I___like___photography."
 
-5. NUMBERING & ORDER
+5. english_ipa and english_ipa_separated_by_space (back side, part 2 — two versions)
+   - english_ipa: the American IPA transcription of the full sentence, wrapped in forward slashes, e.g. /aɪ laɪk ˈfoʊ.tə.ɡrə.fi/. Natural reductions are allowed (e.g., "a" → /ə/, "is" → /ɪz/), but each English word must correspond to exactly one space-separated IPA chunk — never merge two words into one chunk or split one word across two chunks. Count contractions ("I'm," "don't") as one word → one IPA chunk, without expanding them.
+   - english_ipa_separated_by_space: take the same IPA chunks (without the enclosing slashes) and join them with the delimiter "___" instead of spaces. Example: "aɪ___laɪk___ˈfoʊ.tə.ɡrə.fi"
+
+6. WORD-COUNT MATCHING (critical, applies across all four fields in rules 4-5)
+   - The number of "___"-separated tokens in english_meaning_separated_by_space must exactly equal the number of "___"-separated tokens in english_ipa_separated_by_space, and both must equal the plain word count of the sentence in english_meaning.
+   - Before finalizing each card, count the tokens in both separated columns and verify they match. If they don't, fix the IPA segmentation (not the English sentence) before moving on.
+
+7. NUMBERING & ORDER
    - Number flashcards sequentially starting at 1 (card_id column), preserving the original order of the source text.
 
-6. OUTPUT FORMAT
-   - A single CSV file with header row: card_id,key_infor,vietnamese_meaning,english_meaning
-   - Wrap every field value in double quotes to handle commas/special characters safely.
-   - One row per flashcard — no extra commentary rows, no markdown formatting inside the CSV.
+8. OUTPUT FORMAT
+   - A single CSV file with header row: card_id,key_infor,vietnamese_meaning,english_meaning,english_meaning_separated_by_space,english_ipa,english_ipa_separated_by_space
+   - Wrap every field value in double quotes to handle commas and special characters safely.
+   - Aside from the intentional bold markers in english_meaning (and carried into english_meaning_separated_by_space), do not add any other markdown, headers, or commentary — just the data rows.
+   - One row per flashcard, no extra rows.
 
 Process the entire source document from beginning to end and generate flashcards for every sentence.

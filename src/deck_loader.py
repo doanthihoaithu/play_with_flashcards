@@ -1,11 +1,16 @@
 import csv
+import logging
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List
+from typing import List, Tuple
+
+logger = logging.getLogger(__name__)
 
 # Accepted CSV column names for each field, in priority order.
 _VIETNAMESE_COLUMNS = ("vietnamese_text", "vietnamese_meaning")
 _ENGLISH_COLUMNS = ("english_text", "english_meaning")
+
+_WORD_TOKEN_DELIMITER = "___"
 
 
 @dataclass
@@ -14,6 +19,8 @@ class Card:
     key_infor: str
     vietnamese_text: str
     english_text: str
+    english_ipa: str = ""
+    word_ipa_pairs: List[Tuple[str, str]] = field(default_factory=list)
 
 
 @dataclass
@@ -31,6 +38,32 @@ def _first_present(row: dict, columns) -> str:
 
 def _deck_name_from_path(path: Path) -> str:
     return path.stem.replace("_", " ").replace("-", " ").strip().title()
+
+
+def _build_word_ipa_pairs(row: dict) -> List[Tuple[str, str]]:
+    """Pair up english_meaning_separated_by_space and english_ipa_separated_by_space.
+
+    Both columns are "___"-joined and word-aligned by construction. Bold
+    (**) markers already present in the word tokens are preserved as-is —
+    rendering decides what to do with them.
+    """
+    words_raw = (row.get("english_meaning_separated_by_space") or "").strip()
+    ipas_raw = (row.get("english_ipa_separated_by_space") or "").strip()
+    if not words_raw or not ipas_raw:
+        return []
+
+    words = words_raw.split(_WORD_TOKEN_DELIMITER)
+    ipas = ipas_raw.split(_WORD_TOKEN_DELIMITER)
+    if len(words) != len(ipas):
+        logger.warning(
+            "word/IPA token count mismatch (%d words vs %d IPA chunks) — padding shorter list",
+            len(words), len(ipas),
+        )
+        target_len = max(len(words), len(ipas))
+        words += [""] * (target_len - len(words))
+        ipas += [""] * (target_len - len(ipas))
+
+    return list(zip(words, ipas))
 
 
 def load_decks(decks_dir: Path) -> List[Deck]:
@@ -55,6 +88,8 @@ def load_decks(decks_dir: Path) -> List[Deck]:
                     key_infor=(row.get("key_infor") or "").strip(),
                     vietnamese_text=_first_present(row, _VIETNAMESE_COLUMNS),
                     english_text=_first_present(row, _ENGLISH_COLUMNS),
+                    english_ipa=(row.get("english_ipa") or "").strip(),
+                    word_ipa_pairs=_build_word_ipa_pairs(row),
                 )
                 for i, row in enumerate(reader, start=1)
             ]

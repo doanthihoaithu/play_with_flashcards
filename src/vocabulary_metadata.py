@@ -14,15 +14,19 @@ CATEGORY_KEYWORDS: Dict[str, List[str]] = {
     "nature": ["forest", "village", "nature", "silence", "northern lights",
                "winter", "mountain", "sweden"],
     "lifestyle": ["life", "journey", "home", "dream", "passion", "moved", "roots"],
-    "technology": ["ai", "artificial intelligence", "data", "digital", "computing",
-                   "technology", "infrastructure"],
+    "technology": ["artificial intelligence", "data", "digital", "computing",
+                   "technology", "infrastructure", "virtual reality"],
     "government_policy": ["strategy", "government", "policy", "ministry", "governance",
                            "national", "agencies", "officials"],
     "business": ["business", "company", "brand", "employed", "administrator"],
     "family": ["mother", "father", "husband", "family"],
-    "art": ["photography", "art", "artist", "paint", "music", "writing", "photographer"],
+    "art": ["photography", "artist", "paint", "music", "writing", "photographer"],
     "education": ["training", "education", "university", "skills", "students", "majors"],
     "economy": ["economy", "economic", "billion", "million", "percent"],
+    "science": ["research", "study", "studies", "brain", "brains", "animal", "animals",
+                "monkeys", "rats", "navigation", "surveys", "imaging", "psychology"],
+    "advertising": ["phone", "virtual reality", "get that phone", "advertisement",
+                    "commercial"],
 }
 
 FIRST_PERSON = {"i", "i'm", "my", "me", "myself", "i've", "i'll", "i'd"}
@@ -30,5 +34,5 @@ SECOND_PERSON = {"you", "your", "you're", "yours"}
 SEQUENCE_CONNECTIVES = {"then", "next", "after", "once", "finally", "first", "soon",
                          "later", "meanwhile"}
 FORMAL_WORDS = {"strategy", "government", "governance", "percent", "billion", "million",
-                 "policy", "framework", "national", "officials", "agencies", "ministry",
-                 "economy", "digital"}
+                 "policy", "policies", "framework", "national", "officials", "agencies",
+                 "ministry", "economy", "digital", "strategic"}

@@ -1,0 +1,365 @@
+Good afternoon, guys.
+Welcome to another episode of the Vietnam Innovators Podcast.
+I'm your host, Hal.
+Thank you for tuning in every single episode and supporting the program.
+Without you guys, this would not be possible.
+And as we continue toward our 500th episode of this program, we're pleased to introduce more different types of guests, industries, and insights from all across Vietnam and the world about what's going on here on the ground.
+And we've heard you guys, and we've brought our latest guest on the program to share some of those insights today.
+Yens Lner.
+He's the CEO of TechComon Bank, the largest private bank in Vietnam and I think also quite up there on in terms of leaderboard overall.
+Um, a lot to share today uh with the bank and of course my co-host Michael Kolari who you guys might recognize from the last few programs as well, chief economist of Vic Capital.
+Uh, Yens, thank you so much for making time today.
+Um, you guys have a huge business to run and just having a couple hours of your time today is very valuable.
+So, just want to start with a big thanks.
+>> No, by all means, happy to be here.
+>> Yes.
+>> So, why don't we just start with a quick intro? Who you are, why did you come to Vietnam? Give us a 60 elevator introduction.
+>> Okay.
+So um Yan Slottner and originally from Germany and came to this part of the world, not exactly this part of the world but Southeast Asia in 2001 and then and started off with a consulting company was and lived in Malaysia for four years went to Singapore for 10 years and then worked as an executive for 5 years in Thailand and then now for six years here in Vietnam.
+Um I think why coming to Vietnam is I think relatively simple right you just look at the GDP growth charts right and I think it's an amazing story right and and I always like to be in in places where there's a lot of dynamic transformation going on so it was actually a relatively easy call and then you you get the chance to work on a platform like tech bank in such a market right and and it was a very very easy decision actually to make >> um Michael I want you to chime too because your team deep into the research.
+What was your first reaction when you heard folks like Yens was joining TechCom Bank.
+This was 6 years ago.
+What was the market saying? >> Okay, so first of all, in his introduction, he kind of glossed over how amazing his background is, a consulting company, McKenzie, the best in the world, and also BCG.
+And I really feel so I've been in Vietnam for almost 20 years now.
+And when we when this country can start to attract people of your experience and stature here, now we know we've made it, you know, because before the the difficulty was getting people with a super high profile to actually want to come and be engaged with the country.
+So it's a amazing for the country and for the bank that you that you've come I think you know.
+>> Yeah.
+Fantastic.
+Setting the bar and and hopefully more folks to come across the industry as well.
+Um, Yans, why don't we just start with what is Techcom Bank? Because, uh, I've been here 10 years, Michael 20.
+>> Uh, this is our first time talking to someone uh, at the CEO level at least at Techcom Bank.
+I never asked >> tech is in the name.
+Um, and of course the bank I think is well ahead of its peers in terms of local industry at least.
+>> How did that come about? What was the founders's vision behind tech uh, embodied within the culture? tell us about uh some of that journey in the tech space.
+>> Yeah, so when I when I came here and even in the in the most recent time, you probably would have thought whoever came up with this name must have had amazing foresight, right? And so you're saying how did it happen, right? Because the bank was founded in 1993, right? So there was before internet and all of this, right? So the story and back then was it was actually um a group of people who were educated overseas and who worked in Russia and they were actually um in the engineering they came from an engineering background they were not bankers right so they said oh as an engineer there must be something to be done with the bank right because it's usually marketing but isn't it a system right and and so the system can actually work so and I think the first what I understood is the um thoughts were actually because they were in oil drilling that they wanted to put something like a petroleum or oil title into it right but then they also thought that's a little bit limiting right so they said what but we are ultimately technical engineers so okay so that's where the tech was actually coming in but we are of course a commercial bank so then and out comes the name tech bank right and I think ever Since the bank has been very true to that original idea, right? So if you look at it, we're we're thinking through um the way how we deliver customer experiences in a very very systematic way, right? So a lot of the things how we're doing it are very structured and we we're appreciating technology, right? And we use technology to deliver it very standardized experiences.
+So it it's probably that engineering background, right? which helped us to establish very strong processes which can actually replicate right and for us that is experience that's important that you're not hitting us right and you talk to an RM and your experience is completely different to you talk to somebody else right but usually you should be getting the same experience independent of who you're talking to right and that is very much at the core and of that bank >> you know there's an expression in English the harder I work the luckier I get >> yeah yeah completely >> like some of the steps you've done in the past.
+For example, this enormous exercise of doing a proper data lake and having everything I mean you did that before the AI explosion and so now when you talk to banks of course all banks are talking about you know we want to do AI and blah blah blah.
+Usually they're just talking about like a mobile app or something like that whereas you're really on the leading edge.
+You were able to do it because you took those steps beforehand.
+So I think we were always um of the opinion that an app is not differentiating at all, right? But an intelligent app is actually really the holy grail, right? And so therefore it's all about the intelligence you can actually harness, right? And so therefore data is probably one of the most unused um assets and a bank actually has and and I can go through a lot of our decisions from the way how we structure products how we creating value propositions you will see that data runs through all of these um decision- making right because we really believe that it's our job to understand our customers as best as we can within of course the limitations of what allows, right? And but having that understanding that really makes the difference and then being able to deal on it at scale, not every individual person who's just knowing you because they have been in the branch for the last 20 years and therefore have followed your journey, right? But every single person should be able to understand you the moment you walk in completely independent of who they are.
+and and that is driving a lot and of our decision- making and that's where the data came in very early on >> and of course data is just part of that triangle.
+>> Completely agree.
+>> I I want to stop there because um there's three pillars here.
+We have data, we have digital and then we have talent.
+>> Um and based on my review of Techcom Bank's kind of uh kind of public records and all that, the investment is is nearly a billion dollars if if I recall correctly, right, Michael? It's an incredible figure.
+I mean to put that in context, this is like almost DBS in Singapore type level.
+It's really amazing.
+>> So to be fair, so we invested 500 billion over the last 5 years, but it will probably be a billion and going forward and over the next 5 years >> regardless a lot of money and you know it's not just the data, it's also the talent.
+And I want to start there.
+>> How do you attract top talent across the board, but also tech talent? because uh when they you look at the tech industry, people are going towards AI, maybe machine learning at least in the past and you know social media platforms and whatnot.
+Uh what is the attractiveness of working with tech at a bank and we've also heard about your efforts to recruit a lot of overseas Vietnamese and and talent in that space.
+So tell us how you guys approach that from a recruitment point of view.
+So in that triangle we're talking about which is data and talent indeed and we believe the most important one is actually talent right because data and all of this you can replicate you can to a certain extent throw money at it but but talent is what drives all of these right so um on the talent side um I think the the real value proposition is actually a little bit what I articulated for myself right which is you can either be somewhere in another market, right? And you move a little bit, right? You're you're moving maybe market share 1% here or you're optimizing on the fringe, right? But you're not able to shift a country, right? You're not able to create something which basically touches on tens of millions of customers, right? And and change the lives and how they experience things.
+So a lot of them are basically just saying I want impact right I mean who wants to come to work and just draw a paycheck right but you want to have impact so impact people are and excited about it but then they're saying hey yeah I understand but can I actually really have impact do you have the technology especially for data guys right data guys are excited about data they want to use data and in the beginning it was very hard because we didn't have all the data right so Today we probably have one of the most advanced technology stacks.
+So the stuff we're doing here when it comes to AI is probably the same what you would do in Singapore.
+I wouldn't say like in sing Silicon Valley but but not too far away, right? But you have this broad richness of data on which you can really start exploring and understanding.
+Tell us about some of the talent you're hiring.
+Like could you paint a picture about who they are, where they're coming from? Are they >> um like cuz you you you say it at a high level and uh >> Great.
+>> Yeah.
+>> But I want to hear like who these people are exactly.
+Don't name names, but like where are they coming from? Sure.
+>> What were the conversations like about motivating them to even come to Vietnam in the first place? Cuz I imagine some are not even Vietnamese.
+>> So, okay.
+So, um let's tell you where we went, right? So up to now we went to um Sydney, Hong Kong, Singapore and London and Los Angeles and Paris.
+>> New York probably >> and New York from we actually flew them over to Los Angeles and Silicon Valley.
+But I I think we basically went to places where there are financial centers, big financial centers, but also a Vietnamese diaspora.
+M >> so where are where are Vietnamese right? So Los Angeles is Orange County and a lot of people went to Paris, right? And you have a strong and Vietnamese population in Australia, right? So we're trying to bring people back with an affinity to the country, right? Because they're saying they have been over there overseas educated, have been working there, let's say 15 or 20 years, parents are getting older, young family want to get them closer to their heritage.
+When did it occur to you that you needed to attract this particular >> so basically so when I let's say I joined probably on August 1, August 2.
+>> Okay.
+>> So it was not so far out and because I think I did the same beforehand >> and I believe that a lot of talent goes overseas because they don't think they can get the same opportunities, right? It's that they get something richer.
+So we needed to convince them that they can have exactly the same atmosphere.
+Right? If you're working in this office here, it's completely open architecture.
+You you get the same um quality of people in, right? You work on the same topics, you have the same technology.
+So people knew that they could do the same work, right? They didn't need to make compromises when it comes to work.
+But then they're doing it in basically in an environment like in Vietnam.
+And a lot of them when we came over there the recurring theme was oh we were not we didn't know that something like tech bank exists right we were leaving this country 15 or 20 years ago we thought this is more like a stateowned company it's bureaucracy right but they thought that is the prerogative of Singapore or being in some of the other markets they didn't know how much the market has developed so we did a lot of education just tell them >> so When you said we went to you like physically flew there, >> we physically flew there.
+We we went with people, not just senior guys, but also junior guys who just came back in order to um explain what it means.
+>> And you were there yourself too? >> Of course.
+Oh wow.
+>> Yeah.
+No, I I was there with and so we took probably on average we have six or seven of our most senior guys who are spending two or three days and then before that there are interviews and so it's a it's a real machine and >> was there any city or country that was like the most successful in terms of the >> so we are very successful in London and in Singapore.
+What what do you think has to be done to attract more talent from overseas at this stage? You've traveled the world like you personally have even done that which is amazing by the way I think the CEO of a large bank to to do that to get talent means a lot.
+>> What needs to be done next? >> Have you asked that question to your team? I'm sure you have.
+Like what do you what do you think? So again, I think what needs to happen a it should not just be us.
+>> So far it is.
+>> So that should also go up.
+>> You a little bit sold yourself short before again where you were saying you know the market or but this is really one of the only banks or big companies in Vietnam that the type the profile the people you're talking about would be attracted to come back and work at.
+So again I think for the time being you're right there only very few who would basically fit here >> and the bill right and but I think right now it's also people talking to people right it's a little bit like this member get member so right now we also get people coming over here who are talking to their friends right who are still back in Singapore or London right the other one is um it's quite interesting so we create these networks where maybe in every city we reach out to a thousand people Right? And for some of them it's just not the right time right but they are actually coming overtime after one year or two year they are reaching out again right or they are having someone who knows someone right so I think these network effects build over time I think the government right now is trying a little bit to really bring also talent back right so there are a lot of incentives and all of this right I still believe it comes down to you need to show people very concretely how will their day today life.
+>> Yeah.
+>> Really? How will it look like? And I think that makes a difference.
+Yeah.
+It needs to be organic.
+>> So, how is life Yens? It's been six years Hanoi, Vietnam.
+How has it been for you? >> Let's hear from you.
+>> You see, I I think it's it's relatively simple.
+I, as I said, I like to have impact, right? And I I think coming down to have we had impact, are we changing lives? Are we making lives better? Um, and I I think depending on how you measure it, I I I think we're successful in certain areas, right? And um I think every single day we're working very hard to make this happen.
+As long as that is the case, then I feel it's much more exciting than sitting and optimizing on the fringes and doing a little bit here or there, right? It's these big moves.
+Um, whenever >> Yeah.
+Yeah.
+And thank you for sharing that.
+I I want to comment from my perspective.
+Um, so I'm a Vietnamese overseas as well.
+I run a media company.
+So we just hear from a lot of people commenting online, let's say.
+And, uh, I think you're right, purpose, impact is is the 90% or or perhaps the hardest 10%, right? But I find that the 90% to convince people >> like life in Vietnam, >> like what is it like to get a work permit? So, that leads me to my question cuz uh Mike and I, we actually had a recording with our mutual friend Rich Mlen the other day uh from VFC.
+For the audience, if you don't know what I'm talking about, uh VIC stands for Vietnam International Finance Center.
+Rich Mlullen, the CEO, we just had a discussion link in the comments below.
+He talked about how there's various initiatives happening at at that level such as expedited work permits um taxfree >> I something like that right Mike um >> among other things will that help uh because you know when I hear about those kind of benefits >> I guess you could say I think of like Dubai >> I think of Singapore Hong Kong >> is that is that going to help at all has that come up in conversation as a a barrier for recruitment of talent.
+I don't mean overseas Vietnamese either.
+I mean also just international talent.
+>> So I think so people we want to have are people who have a lot of other options.
+>> So you're not taking the leftovers, right? You need to actively compete.
+And so first one is and I I think we should be clear is you need to be able to pay globally competitive compensation, right? And that we can do and we basically looked at it and our philosophy is ultimately we don't want to reduce our overall sales or our overall staff cost right but we're happy let's say to pay it to fewer people so that we can actually pay more.
+So we're really looking for quality.
+So that you need to assume and now do you need to basically pay exactly what people would be getting in Silicon Valley or in Singapore? People are willing to go a little bit down, right? Because they're also coming back for a purpose.
+If we don't if we only look for people for for guys who would just want to make money, I think we would not hire them in the first place because these are mercenaries, right? And you need a little bit more missionaries, right? So you need to find people who are saying come over here's what we can offer.
+Are you excited about the opportunity? And then the other one become hygiene.
+And of course that hygiene you need to meet, right? And so we have programs.
+We know what we need to and and pay.
+And yeah, but we can get people who are right now in areas like Singapore and Hong Kong with much lower taxes, right? And you can afford to do this because you're producing stellar result.
+>> So we're basically giving them the tools.
+So therefore, and we we enable them to basically earn more money because they can create more value.
+The more value they can create, the more we basically able to give it back.
+So the business model is also shifting towards that.
+>> And you this is reflected in your results.
+You're producing a return on assets uh over 2%.
+I mean, which is an amazing result sort of anywhere in the world.
+uh net interest income, the difference between the lending rate and the deposit rate around four percentage points until recently.
+We'll get into all that.
+>> I want to move into that actually.
+Mike, uh you guys might be listening today and wondering how do I know more about Tackon Bank? Uh I want to hear from the CEO about the results themselves.
+Well, we're about to get into it.
+Um so I want to firstly start uh with the numbers because they speak for themselves.
+Um a return on assets above 2% which I understand to be above the market average.
+This is this is an excellent result anywhere in the world.
+>> Very good.
+Um high credit rating of any private bank.
+Um so it takes more than tech to achieve this.
+Um I would love for you to share about what the other main drivers >> of that performance of the bank are especially in the last couple of years.
+>> The first one is um we really look very much after our funding cost >> and so the the basic for every successful bank is cheap funding.
+That is why you're hearing us talk so much about current accounts, savings accounts, because it is a cheap form of funding.
+If we would need to go out and hunt for very expensive term deposits and all of that, that would actually not work.
+So the reason we're doing so much digital loyalty programs and trying to find really being your day-to-day bank is because then people leave their caser or their normal transaction amount which they need in order to pay and and just live right with the bank at relatively cheap deposit rates.
+So that ratio we manage like a hawk right and we're trying to bring it as high as possible and it's the highest in the industry >> although in Vietnam the current account savings account CA cassa ratio this is very low for the industry so you have a really difficult uh time there to try to >> so again I I think the um and it is relatively low but then on the other hand if you compare to other markets where sometimes this ratio is very high a lot of This sits in savings accounts which we don't have as a concept in Vietnam.
+So we created this auto earning account which is probably the first time that the construct like a saving account is even existing right and so but again it was with the logic it reduces our overall cost of of funding which we're having.
+So that is a very important element for us right the second component is fee income.
+So we're not just looking for I lend or I take deposits I lend but everything what we're doing on insurance or on wealth management and everything what is not paid as an interest but as a fee it's actually very very very strong in this area right and so to give you an idea our market share when it comes to let's say asset size in the total industry maybe we're at 5% right but our market share when it comes to fee income from really fees from these activities is 17%.
+So, we're much more focused on that area, right? >> Yeah.
+And um I love all these insights.
+It's like a shareholder report but one-on-one with the CEO oneonone.
+>> Yeah.
+>> Um what I'm hearing is basically you guys are doing a lot of product development.
+And I I want to stop there too and and kind of add context that because a lot of our international viewers or even the overseas Vietnamese perhaps that are listening, they might be wondering, yeah, you know, I live in the US, live in Singapore.
+I get the all these ass products sound like everyday kind of thing, but they're not in Vietnam.
+>> So I think what is the difference? We were always focused very much at the top of the pyramid.
+And so these were already people who had money.
+And because we were so focused, that is why our market share is so high.
+But now as more and more people are getting it, our job is to make sure that every one of these people is really getting these kind of services which you're right are normal in other markets but here they are very new because there was no need for it.
+>> So we basically classify that at least according to my terminology is like Henry's.
+Have you heard of this term by the way? You haven't heard of it? Do you know what it is Mike? >> We're too old to know that.
+>> You don't so you don't.
+Okay.
+So I forgot where I discovered this term is a few years back.
+So it stands for high earning.
+>> Yeah.
+>> Not rich yet.
+>> Yeah.
+>> It's another term in the payments and banking industry could be like emerging affluent.
+That's another term.
+>> So basically people that make a certain salary that >> they have a decent amount left over.
+Uh you know after all expenses are netted off.
+>> Okay, what do I do with my money? >> Yeah.
+>> And that's basically the more layman's term of explaining what we just talked about which is okay I got some money left over.
+What do I do with it? Yeah.
+>> And actually that that mindset I've been here for 10 years and Vietetra we hire a lot of essentially that group higher high earning but not rich yet and they're typically you know older Gen Z millennials.
+Now by the way I'm 33 years old so my peers more or less >> that is the overwhelming mindset.
+>> They don't know what to do with that extra 10 20 30 million a month.
+>> Yeah.
+Aside from like literally uh I have staff asking me over the years we have another show called the money date >> and that show is literally like a date about money >> like putting it out in the open like it's a taboo topic right and I literally have staff asking me what do I do with that I don't even know >> because in Vietnam I don't invest a lot I I just bought an apartment and that's basically it but I don't actually besides a term deposit know what to do with it >> and um I I want to accentuate that point too because that is like the story of Vietnam right now high earning not rich yet >> and they have don't have a clue about what to do next in a good way like they're ready but they don't know what to do next can tech be that partner >> that's going to be >> efforts to start a new insurance company IPO techcom securities push more into wealth management is presumably to focus in on this >> no but so yes but I think it comes first down again to technology right the reason I want to give you an example so when I started off we offered certificates of deposit right so it's a very traditional product in other markets right so but the minimum amount you needed to invest was around $100 million dong >> right because it was relatively complex complicated and all of this right so we brought this minimum amount down to $100,000 >> dong >> so $4 somewhere you can find it right and you click on a button and you invest at a ticket size of 100,000 right so it's not just having new products right but I think it's making the existing products affordable through a business model which is not all expensive because you have high trained relationship managers and then in the background a lot of other things need to happen and a lot of people need to work on it technology comes in to actually create that at an effectiveness and efficiency level which allows people to do it at scale >> because it's very different if you deal with let's say 5,000 customers or suddenly you have 5 million customers >> who can actually have this problem right and we only have a very few um time left that people are getting into that um bucket if you look into other markets if suddenly you go into around $6,000 to $7,000 GDP per capita you see that this explodes this wealth management market right and we are at the 5,000 actually in Ho Chi Min and Hanoi probably a little bit higher so if in the next two or three years you have a lot of people who get into that situation right and you then don't have a way to help them again I think we are failing our customers so so that's why I think technology and AI and all of this gives an amazing opportunity to actually allow these investments at scale serving customers and say doing financial education at scale.
+>> So Yens uh what I'm hearing is Tekkenham Bank is the enabler of the next generation the a emerging affluent so on and so forth.
+I want to debunk things a little bit because >> we might have a few listeners today who are particularly overseas or even here in Vietnam that might be thinking like how big is this emerging affluent class? our income's actually going to rise enough where this group is um has some income left over to invest.
+Can you share some of your team's maybe high level research or even some data perhaps to illustrate that >> hey this is actually something we got to be on top of this is something we have to invest in to enable that future for Vietnam.
+Any any highle numbers that are worth sharing from your side? Sorry, one of the the simple numbers you can have.
+So we have um let's say today 5,000 GDP per capita, right? You're saying it happens at 6,000 GDP per capita, right? And we are growing probably wealth in dollar terms.
+If you roughly look into dollar terms, maybe at a 10% clip peranom, maybe a little bit more, right? Um so with that in mind probably in the next two or three years you see that a huge proportion will suddenly come in.
+So today we think that maybe 12% are a little bit in this class which invest in Vietnam because really it is at this inflection point where there as I saying you look into other markets really goes like oh nothing happens and it skyrockets happened in Thailand happened in Malaysia because at this point suddenly you have money >> and and everyone suddenly has money because this is the average right and that's what I'm saying is then you see suddenly 12% 50%.
+It's quite interesting also.
+>> Yeah.
+My next point u and Mike and I have talked about this extensively over the last uh few recordings is the housing >> situation in Vietnam.
+>> I would say basically under supplied not just my opinion I think it's factual.
+Um yet it remains such an attractive investment option.
+M >> with that said um Techcom Bank has a very strong position in in this space and serving the need rightfully so >> how do you manage that um kind of exposure with that said and >> what other high growth sectors are you guys excited about that you want to move into and make sure consumers are aware of.
+So um indeed real estate is is a is a hot topic and then you can take a look at it from a lot of >> I mean on the one hand it's an amazing business for you.
+You lend to the developer then you can lend to the buyer and then the new home buyer can come a pipeline for your wealth management.
+On the other hand everybody thinks you know there's a there's a bubble in Vietnam and you're one of the big real estate lenders and you know that's creates some concerns and so that would be really interesting to hear your perspectives on all that.
+real estate I mean first you have to look at from a different from a lot of different perspectives so the first one is is it overs supplied or under supplied right and because everyone is looking at China these empty kind of areas right completely overbuilt I still think we have an under supply we have a problem of matching a little bit the supply what I mean with that yes we need 700,000 units probably 700,000 units get built over the next I don't know 10 years but are they built in the right price category right are the developers saying oh I built kind of high-end but few people are saying I can only afford low-end right so there's a little bit of this mismatch which has one risk component in it right secondly because interest rates are still very volatile sometimes everyone wants to go into real estate then sometimes they're cooling off again right and then there was also legal areas and legal restrictions.
+So, so there's a lot of risk in terms of consumption and all of this, right? However, one thing which drives the secular trend is a we still have a lot of urbanization.
+So, people still want to live in the big cities.
+Secondly, in the big cities there's not enough space, right? And and the last one is still people believe it's one of their best investment classes especially in a market like Vietnam right even not gold not bonds not equities the real investment is piece of land or a house or an apartment >> and I I want to get you're not in real estate of course directly at least uh Yens but your your role um within the bank but the bank itself too is important >> real estate overall very important for the country.
+Now how do you manage risk in that as a bank right and so for us the most important question is is there demand because if there's demand you don't have risk then the real risk you only having is can a developer develop that so that it actually hits the demand right is that person able to have the right legal rights do they know how to procure do they know how to build so that ultimately that product is really with the end customer.
+So when we finance a development, we probably already know in 3 years how the sales will go, which segments will probably take it up and we work with the developers and saying, "Hey, give us your market research.
+Let's compare what you think and what we think and then we wing fence that project." So a lot of risk usually when you have big developers is they take the money from one already financed the next one, right? And then if something happens here, you have already spent the money on the other side.
+And therefore, and what we do is we keep when we work together with an a developer, we keep the money and saying, "Hey, just use that money just for this development.
+You cannot just take it and move it somewhere else." So therefore also our customers our end customers know very much that ultimately it will be delivered because what they are paying in is used for building that property.
+So from that perspective there's a lot of restrictions or safeguards you need to put across the entire value chain and that's why we actually we never really lost money in real estate right but we're doing it also very different than probably a lot of other competitors in the market.
+So Yans with that said um I understand based on our research that Techcom holds 50 to 70% market share in wealth management for affluent savers so more than half the market depending on the measure.
+How did Techcom Bank build that proposition? Was it an investment from 6 years ago that you guys made? Was it more recently and you saw exponential growth? Could you explain um a little bit about that space and what your plans are for that business? I cannot take any credit for that and I think that was always beforehand.
+So where is it coming from? Um ultimately it actually came from the real estate market >> and the real estate market and so first what is this 50 or 60% right? What it means is people in this affluent category >> which is defined as >> so I would probably saying really at the affluent market I would say that probably goes up from $100,000 >> of assets >> of assets up right um what means 50 to 60% is they will hold one or more products with us could be a credit card could be a mortgage could be a bond right whatever it is but we have the ability to reach out to that customer and propose a product, right? Um, so where did it start from? If you look into people who have money in this country, as I said, in the absence of a lot of investment opportunities, they invested in real estate.
+Most of their wealth actually sits in real estate.
+60% of an asset and allocation would be in real estate.
+So we actually worked with them because we worked with the developers and because we worked with the high-end developers.
+The guys who bought it were the affluent customers.
+So the affluent customers were basically starting on a mortgage and on a real estate side.
+So as they basically got the money then we were basically saying okay so what else can we offer because after they had bought the first house and they p it back after 3 or 4 years or 5 years they had money again right so we said okay what else can we actually offer them we said well maybe not the term deposit but what we are seeing is because we have so many developers we cannot put all these developers and finance them on our own so why don't we issue bonds Right.
+So we're basically finding a different alternative for them to finance so that we're not financing it as a bank but they issue these bonds through our help to the customers who bought their real estate but now as they have money they need investment opportunity.
+So we created TCBS and on the back of TCBS we created ultimately the bond market.
+So now they have not just real estate in their portfolio but they also have wealth in their portfolio.
+And then we said what else do they need? Oh they actually need credit cards.
+So we are the leading um with Visa basically the leading credit card and company because we needed a high-end credit card for these customers.
+So as I said it started with real estate.
+Then we thought about as they financed that what else do they need and then created the other product surrounding it.
+So that at one point in time they don't have a mortgage anymore but now they hold a credit card or they hold the bonds.
+But that's where it started.
+>> Let's let's talk about credit cards a little bit.
+Uh Yens, I'm American by the way.
+Uh Americans love their credit cards.
+Michael's also American.
+Germans like their cash from what I understand.
+There's no credit card rating credit rating agency in Vietnam, but uh it's quite famous that you found ways around that and some very ingenious getting back to all your data and AI type investments.
+Can you tell us a little bit about that? >> So I think to be fair there's a credit bureau.
+>> Yeah.
+>> So the credit bureau gives you actually relatively it doesn't give you a score but it basically tells you has the guy defaulted or not right >> on people.
+>> On people and you have your own layer though to kind of further analyze.
+So our so we are defining our customers with around 12,000 data features every single customer and and we're basically trying to understand exactly and what these people are doing and because we are so strong on Kasa which means we have the transaction accounts we can use and understand their transactions to basically give us an idea of their risk profile.
+12,000 >> features.
+>> That's amazing.
+>> So it's we're we're we're storing around eight billion data points every day and then it constructed into features so that we understand really what people are doing.
+>> Are you able to say without giving any trade secrets away you know what any of those are that you use to judge people? >> I think they are so I really I I think they are so broad.
+Right.
+But of of course a lot of that would be geoloccation data.
+>> Right.
+>> Right.
+on where are people transacting and at a certain point and in time >> I've heard even how quickly they type in their application.
+So again I I think there's a like for example and you you have our our app right and the app usually is saying I want to transfer money right and then the question is and confirm right is this what we really want to do depending on how long it takes you to confirm we know are you really reading it once more or I just if you're reading it you're actually a much more careful person so from a risk perspective you actually have a different attitude do towards risk.
+The other one is for example, do you let your battery draw down? So if you're very risk taker, actually your battery will be on a much lower level on a regular basising, right? So you you can read a lot >> of behaviors, right? And then you just put this together and we and we try then constantly testing does it give us an idea about risk, right? And it's not like that.
+You see, we want to lend to people, but sometimes very hard for us, >> right? But that gives us more understanding of a customer so that we're actually saying, "Hey, we we believe actually you're a good guy.
+Maybe you we don't have your assets yet or you cannot describe that, but we know actually enough of you that we believe we can extend to your credit." So otherwise, a lot ofmemes households, they would never get credit, right? Because they don't have formal books and all of this, right? But we we form our own opinion based on these behaviors and that actually gives us the ability to lend much more.
+>> I do want to share one story.
+Um it's related to Visa and a bank in the US actually uh about 10 years ago.
+Um I was my first job you know I was creditw worthy so I I got this credit card uh which was the Sapphire Preferred Visa Signature.
+Do you know this car by any chance? >> I think the name sounds very familiar.
+Basically, it was a pioneering credit card because you paid an annual fee, which was like unheard of at the time.
+Like, who would pay a fee to hold a credit card, right? >> And then it had all these benefits.
+So, not just like three times points on a dining or something like that, but they included all these benefits that especially millennials were attracted to cuz like the millennials were really the >> the consumer class.
+They're the ones like out there.
+They're not eating at home very much.
+You know, they're they're going out with their friends.
+They're traveling.
+M >> they they have this new found just like Vietnamese, you know, I'm sure the passport take up rate for young Vietnamese is much higher than their their um their parents, let's say.
+>> So this whole different class of approach to consumer spending.
+So not just credit as a whole, but the lifestyle of it.
+And I I do believe again from my view uh Techcom Bank and the likes of your partners like Visa are thinking about that because that that's going to drive the next generation of consumer class.
+So look that up.
+I'm going to send it to you after he ends.
+It's quite interesting.
+Send it to your credit card team.
+Um, >> but sorry just on that one.
+So, you will see that we will launch a major or we just actually launched a major event of what we call one U which is lifestyle points.
+>> Okay.
+And I think what we're right now saying or what the industry and I think what Visa is saying is basically so what's the difference between let's say a debit card and the points on it and a QR code payment with some overdraft and loyalty points coming out of the one you looks exactly the same.
+Your customer experience will be exactly the same.
+So a lot of these products become unbundled and rebundled and and I think especially for guys like Visa, they look into this market and spend a lot of time observing because what they're seeing here might actually affect other markets as well, right? So you see actually even that global giants like Visa would probably spend out spend more time or outsized amount of time and also innovation to basically really understand how they would deal with these kind of unbundling because it might actually affect them over time in other markets as well.
+I want to move on to talk about uh the rest of the TechCom Bank.
+I guess you could call it group because for the longest time Techcom Bank, we have a bank, >> retail, commercial, uh but there's now this movement into an integrated financial group.
+You mentioned Techom Life >> just recently, Mike, and we have TechMake Securities, which is now IPOed.
+>> Um why did you decide to list that business? what what does that mean for the future of the larger group? So the reason we listed um TCBS um was actually um twofold right and one we still believe that um the bank or the group is completely undervalued right so and it's very hard to make this clear to people right so we said okay so let's list TCBS and TCBS in its own right had a market value between four to 5 billion right >> versus around 9 billion for your >> for the bank and it's representing I don't know 10% of our profits or something like that 15% of our profits so either they are wrongly valued right or we are wrongly valued so so there was one idea the other one is um the management team who had worked and set it up for a long time was also looking for liquidation event right so I think there's no change in our strategy we still own 80% we're not intending to sell anything further down it's a very integrated part and so it was more I would say tactical considerations more than anything else right um overall as I said if you believe the story we started off 5,000 GDP goes to 6,0007,000 it probably will not manifest itself in deposits and loans it is a general insurance I want to own a car with a car insurance life I want to protect and I want to invest money right so it's all wealth, general insurance, life insurance.
+And in order to make sure that we can deliver exactly what we want, we wanted to control the entire experience from marketing to product manufacturing to to give an seamless experience because otherwise you need to work with a partner and then they have their ideas and you have your ideas but ultimately you don't get exactly what you want to >> like the bank assurance stuff >> for example, right? bank assurance or you would even work with another asset manager, right? So, so we really want to keep these things together so that we can optimize end to end.
+>> Well, the idea is if you have one good experience, let's say in auto insurance, hypothetically, you would also have a similar experience doing life insurance hopefully.
+>> Very good.
+Um, by the way, before when you said that your stock is undervalued.
+Yeah.
+So, stock market investors would typically look at what's called the uh price to book ratio, right? >> And so, you're trading right now at around call it around 1.2 or so price to book versus you have a return on equity that's sort of in the high teens.
+>> Normally, that should give you sort of a 1.6 1.7 I mean a much higher price to book ratio.
+Um so do you think that um the all the steps that you're doing of branching into these things increasing your communications directly is this is the aim to try to achieve your goal of getting a $20 billion market cap you know within a certain time period is this all part of this addressing this or >> so I think there's one point we cannot do anything about it which is how attractive is Vietnam >> y >> right and then within Vietnam you >> the whole sector is low.
+>> You see that's that's a little bit right.
+So clearly we need to work on making sure that we are the most sought after >> right >> bank right but then I think the 1.2 two or whatever is more a question of how attractive is Vietnam >> right >> as a place of investment so much money has gone out of emerging markets >> you see right now what's happening in Indonesia so much money was absorbed by the US and now everything is about AI um so I think yes as a country we need to be more attractive but I believe you have two or three years of a 10% GDP growth story it comes back and then I think we need to just show why is our earnings momentum and probably and the earnings 's growth potential stronger than the other guys.
+>> And sticking with the Vietnam theme for a second.
+So typically when people say that there's an issue in when foreign investors will say there's an issue in the banking sector in a in a random EM country.
+>> Typically what they're talking about is something we alluded to before the issue of like a real estate boom and bust type cycle.
+This and then there's NPL's blah blah blah.
+But of course that's not the issue here at all.
+M >> the issue in Vietnam is that the lending has for the whole sector not just the you know has outpaced the deposit gathering is something you talked about before >> and so the state bank of Vietnam is taking some steps to try to make the liquidity situation better here be really interesting to hear your perspectives on all that that's part of the reason why the banks are treating a kind of a cheap valuation here >> so I think there's clearly is um a funding um problem, right? There's not enough funding actually coming into the market.
+>> Put their money in gold and >> assets, crypto, real estate, right? Um so that's one thing, but again from our perspective is I think we just need to find different ways to address new ways of funding.
+So bringing international funding in through things like the VIFC etc.
+Right? And in that process you can actually make fee income right because in a lot of other markets if you look at it the a lot of the banks are not making so much money on the interest side but actually through all the other elements as well.
+Still a lot of financing in this market is intermediated through bank balance sheets.
+I think that is not sustainable.
+It's just not sustainable.
+So we already working on a model which is much more we're just in between.
+We find different guys, bonds, different investors and and trying to not just put this on our balance sheet just trying to find other sources and I think that is a much more robust and therefore also an resilient model right if you think about it I don't know we have thrown the pandemic than there was in Saigon commercial bank we had a real estate crisis the financial markets were collapsing and we had a war in in Ukraine, right? And then that came down and then you had a war in in the Middle East and before you had another war in the Middle East, right? So it's not for good lack of challenges, right? But if you look into our profit probably over the last five or six years through all of that we grew maybe around 30 35% peranom and sometimes these things were up then these things were low and so it just the business model needs to basically be resilient against these shocks right >> and it's worth mentioning that um you really dominate the corporate bond issuance you're the number one fee income earning bank in the country uh tech and bank securities.
+Are you going to diversify into more equity management and ETFs and and for me working at Ven Capital, should I worry that we're going to have some competition from you in the future in that? >> So, I think the answer is yes.
+Right.
+And uh >> can I ask you about Rob? No, the answer is just it needs to be a yes because otherwise we are not finding the financing for the 10% GDP growth and if if we're not doing it, somebody needs to do it.
+I think there's so much room that I think Vina Capital and us and the only one together probably has their work cut out for the next 5 years.
+>> Yeah.
+Part of what you mentioned before is when you hit that sort of six to seven, it just goes up exponential.
+You've seen that in Thailand.
+>> No, I mean just it's even simpler.
+10% GDP growth, 5% inflation >> is 15% nominal.
+A credit usually you need more credit in order to get this going is 1.5 usually credit multiplier makes it 22% growth of credit per year in order to finance this.
+>> Yeah, >> the bank right now the central bank has said maybe it's 15%.
+Even in the past it was 18% but we are not anywhere grown 23%.
+So we need to find other sources.
+Impossible.
+>> Let's talk about um Vietnam's growth kind of development agenda.
+Um you we mentioned the figure 10% a few times uh for the audience to kind of get a context of that.
+That's a government target for peranom growth.
+Yes.
+>> And as one of the national champions, you would hope that Tuck Bank contribute to that.
+How closely is the bank's agenda and growth strategy aligned with that target among many other things? Um and do you believe uh the bank can play a role in that next phase of breakthrough growth? And >> so yeah so first one is I I think if we're basically saying we will not play a role then it becomes a little bit difficult right because then the question is who else would basically be coming in right as I said for me the way how I think about it is 10% GDP growth is a 23% and credit growth right which means I need to find the funding and if I want to grow my market share it's even higher than that right because then would need to be 25 26%.
+Um I think a how are we contributing right a lot of this growth in the initial phase will be through big infrastructure projects right and they are very different to anything this country has done in the past because infrastructure was mostly built by stateowned companies right and they were financed out of a state budget right which is a much more ongoing financing and if you do project finance from a private company and you have the names like the wind group or sun group or masterrise or taco all the big names you would need to find a financing structure which we have never done before and in the country suddenly you need to finance 10 15 years and of cash flows which are volatile so it's very different so I think our job as a bank is to actually help develop these structures make sure that this financing can actually really happen.
+>> Which leads to my next and final question.
+By the way, Yens um very nicely sets it up.
+VIFC, Vietnam International Finance Center.
+>> How important or even I guess you could say, um, influential can this platform be in achieving exactly that, would you say? And how does Techcom Bank see its role in helping to guide the VIFC's future? So I think that you should have I'm pretty sure you asked Rich that question right how important it can be and I know that Vina Capital is very involved in it.
+Um this is I I make it relatively um again principle based right I believe over the next 5 years we need around probably around 200 to$300 billion which we don't know exactly where it's coming from when it's not coming from outside >> we don't know yet.
+So we know the amount but we don't know where right so in order to find its way in I think having a conduit like the BFC right which allows money to easier identify opportunities on board be invested and coming out again is tremendously important and I think we've seen this in Dubai we've seen in gift city in India the story has played out again and again and Right.
+So I think therefore it's very important and I think we as a bank will participate in it right we will will and form part of that community but we should be clear the bigger part of that community need to be outside banks right I mean I I can play one part VCB the local banks can play one part TCBS can play a part but there are thousands of financial institutions out there who need to basically saying this is my opportunity and for that there needs to be the right conducive environment right from a legislation perspective tax incentive etc.
+So I think the government, Ministry of Finance, everyone is working on it, but I'm not quite sure, excuse me, if we have the the final answer.
+I think there still need to be further adjustments, right? So I think what we are right now thinking maybe we should just take a couple of projects, just try to do them, right? And then see can it work or can it not work, right? And then as we go through the use cases, probably adjust over time, right? Um but I think there's probably more work to be done in order to make sure that this VIFC is really working and there is this conference now and in Daang and first time and over the VIFC and at the end of the week where I think a lot of this will be actually debated.
+>> I have two last questions.
+One for Mike actually and then one for Yens.
+So I'm going to start with Yens.
+Um, uh, at the end of every podcast, I always like to ask our guest, >> um, thank you for sharing your insights.
+Very invaluable today.
+I've taken away a lot.
+I hope Mike has and the rest of our audience.
+Um, what's one thing that you want to learn more about >> so that the next guest >> can share something for you.
+So, it could be any topic, any interest, could be personal, not just professional.
+What's on top of your mind that's keeping you from a good night's sleep? So you see I I think you probably would not be in the zeitgeist, right, if you would not say it has something to do with AI.
+But I think we need to collectively understand much better what impact AI can have, right? And what it most likely will have >> is that in relation to the bank though or society? >> I think if you're if you're a parent, you probably think about >> are you a parent yet? >> Four children.
+Okay.
+And so what does it mean right for the future of work and what does it mean for society? >> Do you feel like anyone's answering that question clearly for you at the moment or even in the >> No, I I think actually everyone has something >> and some perspectives.
+>> Okay.
+But what about in Vietnam specifically? Do you feel like that's being addressed? I think we are at this point in time probably compared to other markets we're scratching a little bit the surface >> and I I I think you're you're still in a lot of situations or discussions at a more principle level and repeat of what others are saying instead of really deeply going into it >> trying to apply it then understand what the challenges are and then basically work your backward and up.
+>> Well, there you go.
+uh one of the CEOs of leading companies in Vietnam wants to know how AI uh can influence and hopefully for the better impact society here in Vietnam.
+So if you feel like you know somebody that could help answer that question, well guess what? Yens Lner is waiting for you.
+Thank you, Yens.
+Well, between the two of us, you can see how is kind of more like the people person and I'm actually a Silicon Valley trained engineer.
+Thank you very much.
+It was really wonderful.
+>> No, thanks Ryan.
+The conversation was great.
+>> Very good.
+Well everyone, that was Yen Lner, the CEO of Techcom Bank.
+He's been guiding the bank for the last six years with his team here, uh, based out of Hanoi out of their beautiful headquarters.
+We'll do some shooting after this, so you can see a little bit of the space.
+Thanks so much again to also my co-host, Mike Kokari, for his insights and contributing to today's program.
+If you guys want to hear more from Yens and his team, well, guess what? Leave your comments below.
+Uh, we'd love to hear from you.
+And if you feel like you can help answer either Mike or Yens's question, uh, please do chime in as well.
+Thank you, Yens, for your time.
+Uh, back to work, I think, for you and us.
+Uh, we'll see you guys next time.
+Bye-bye.

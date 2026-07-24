@@ -2,6 +2,7 @@ deck_id,num_cards,total_word_count,avg_word_count,category_tags,level,content_ty
 How_Oreo_Cookies_Are_Made,45,743,16.51,"food, manufacturing, economy",medium,story_telling
 Jonna_Jinton_Sweden,46,541,11.76,"lifestyle, nature, art",easy,talk
 Make_Your_Dreams_a_Reality,9,154,17.11,"lifestyle, advertising, technology",easy,conversation
+Techcombank_CEO_Outlook_for_VN_Future_Development,469,10198,21.74,"technology, business, lifestyle",medium,conversation
 Test,1,6,6.0,general,easy,conversation
 The_Male_Brain_vs_the_Female_Brain,9,125,13.89,"science, lifestyle",medium,story_telling
 Vietname_Unveil_National_Data_Strategy_to_2045,10,288,28.8,"technology, government_policy, education",hard,news

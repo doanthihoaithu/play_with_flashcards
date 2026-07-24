@@ -12,10 +12,9 @@ import streamlit as st
 from deck_loader import Deck, load_decks
 
 
-@st.cache_data(show_spinner=False)
-def _load_decks_cached(decks_dir: Path) -> List[Deck]:
-    """Cache deck parsing across reruns — Streamlit reruns the whole script
-    on every interaction, and the CSV files don't change during a session."""
+def _load_decks(decks_dir: Path) -> List[Deck]:
+    """Re-scan decks_dir on every call so newly added/edited decks show up
+    on the next rerun (e.g. a page reload) without restarting the app."""
     return load_decks(decks_dir)
 
 
@@ -25,11 +24,11 @@ def _normalize_deck_key(name: str) -> str:
     return re.sub(r"[_\-\s]+", " ", name).strip().lower()
 
 
-@st.cache_data(show_spinner=False)
 def _load_deck_metadata(metadata_path: Path) -> Dict[str, dict]:
     """Load deck_metadata.csv (produced by utils.scan_and_create_metadata)
     into {normalized_deck_key: {content_type, level, category_tags}}.
-    Returns {} if the file doesn't exist — filters simply won't appear."""
+    Returns {} if the file doesn't exist — filters simply won't appear.
+    Not cached, so edits to deck_metadata.csv are picked up on next rerun."""
     if not metadata_path.exists():
         return {}
 
@@ -63,7 +62,7 @@ def select_deck(
     key_prefix scopes widget keys so this can be called from multiple pages
     in the same app session without their filter/deck selections colliding.
     """
-    decks = _load_decks_cached(decks_dir)
+    decks = _load_decks(decks_dir)
     if not decks:
         st.warning(
             f"No decks found in `{decks_dir}`. Add a `*.csv` file there with "

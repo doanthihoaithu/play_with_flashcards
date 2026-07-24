@@ -37,10 +37,20 @@ _STYLE = """
     left: 28px;
     right: 28px;
   }
+  .shadow-reading-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 0;
+    border-top: 2px dashed rgba(255, 213, 79, 0.45);
+    pointer-events: none;
+    z-index: 2;
+  }
   .shadow-line {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: flex-start;
     column-gap: 16px;
     row-gap: 10px;
     padding: 18px 0;
@@ -67,6 +77,16 @@ _STYLE = """
   }
   .shadow-line .word-unit-word strong {
     font-weight: 700;
+  }
+  .word-unit--active .word-unit-word {
+    color: #ffd54f;
+    transform: scale(1.1);
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+  .word-unit--active .word-unit-ipa {
+    color: #ffd54f;
+    opacity: 0.9;
+    transition: color 0.15s ease, opacity 0.15s ease;
   }
   .shadow-controls {
     margin-top: 16px;
@@ -127,10 +147,21 @@ _SCRIPT_TEMPLATE = """
   let lastTimestamp = null;
   let playing = false;
 
+  // Cached once: word elements don't move (only the whole block's
+  // transform changes).
+  let wordUnits = [];
+  let activeWordIndex = -1;
+
+  function cacheWordPositions() {{
+    wordUnits = Array.from(content.querySelectorAll('.word-unit'));
+  }}
+
   function totalWordUnits() {{
-    return content.querySelectorAll('.word-unit').length
-      || content.querySelectorAll('.shadow-line').length
-      || 1;
+    return wordUnits.length || content.querySelectorAll('.shadow-line').length || 1;
+  }}
+
+  function basePxPerWord() {{
+    return content.scrollHeight / totalWordUnits();
   }}
 
   function maxPosition() {{
@@ -138,12 +169,33 @@ _SCRIPT_TEMPLATE = """
   }}
 
   function pixelsPerSecond() {{
-    const basePxPerWord = content.scrollHeight / totalWordUnits();
-    return basePxPerWord * WORDS_PER_SECOND_BASELINE * parseFloat(speedSlider.value);
+    return basePxPerWord() * WORDS_PER_SECOND_BASELINE * parseFloat(speedSlider.value);
+  }}
+
+  function updateActiveWord() {{
+    if (wordUnits.length === 0) return;
+    // All words in the same visual row share the same Y position, so
+    // finding the word nearest the reading line geometrically can't tell
+    // them apart (it would stick to the row's first word). Instead, derive
+    // the active word directly from scroll progress: position advances by
+    // one basePxPerWord "unit" every time one word's worth of reading pace
+    // has elapsed, so dividing gives a word index that moves left-to-right,
+    // top-to-bottom in exact lockstep with the scroll speed.
+    let idx = Math.floor(position / basePxPerWord());
+    if (idx < 0) idx = 0;
+    if (idx > wordUnits.length - 1) idx = wordUnits.length - 1;
+    if (idx !== activeWordIndex) {{
+      if (activeWordIndex >= 0 && wordUnits[activeWordIndex]) {{
+        wordUnits[activeWordIndex].classList.remove('word-unit--active');
+      }}
+      wordUnits[idx].classList.add('word-unit--active');
+      activeWordIndex = idx;
+    }}
   }}
 
   function applyPosition() {{
     content.style.transform = 'translateY(-' + position + 'px)';
+    updateActiveWord();
   }}
 
   function tick(timestamp) {{
@@ -199,6 +251,7 @@ _SCRIPT_TEMPLATE = """
     speedLabel.textContent = parseFloat(speedSlider.value).toFixed(1) + 'x';
   }});
 
+  cacheWordPositions();
   applyPosition();
 }})();
 </script>
@@ -238,6 +291,7 @@ component_html = f"""
 <div class="shadow-wrap">
   <div class="shadow-viewport" id="shadow-viewport">
     <div class="shadow-content" id="shadow-content">{content_html}</div>
+    <div class="shadow-reading-line"></div>
   </div>
   <div class="shadow-controls">
     <button id="shadow-start-btn" type="button">Start</button>

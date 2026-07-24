@@ -148,10 +148,11 @@ _SCRIPT_TEMPLATE = """
   let lastTimestamp = null;
   let playing = false;
 
-  // Cached once: word elements don't move (only the whole block's
+  // Cached once: word/line elements don't move (only the whole block's
   // transform changes).
   let wordUnits = [];
-  let activeWordIndex = -1;
+  let lines = [];
+  let activeWordEl = null;
   // #shadow-content starts at top:50% (below the reading line) rather than
   // the viewport's top edge, so the scrollable distance needed to bring its
   // last line up to the viewport's bottom edge must include that offset.
@@ -160,6 +161,20 @@ _SCRIPT_TEMPLATE = """
   function cacheWordPositions() {{
     contentTopOffset = content.offsetTop;
     wordUnits = Array.from(content.querySelectorAll('.word-unit'));
+    // Group words by their enclosing .shadow-line (one card/sentence each),
+    // recording each line's content-local [top, bottom) span. Lines with no
+    // word-units (the plain-text fallback for cards missing IPA data) are
+    // dropped here — they have nothing to highlight, but still scroll fine
+    // since layout/transform never depended on this array.
+    lines = Array.from(content.querySelectorAll('.shadow-line'))
+      .map(function(lineEl) {{
+        return {{
+          top: lineEl.offsetTop,
+          bottom: lineEl.offsetTop + lineEl.offsetHeight,
+          words: Array.from(lineEl.querySelectorAll('.word-unit')),
+        }};
+      }})
+      .filter(function(line) {{ return line.words.length > 0; }});
   }}
 
   function totalWordUnits() {{
@@ -171,32 +186,60 @@ _SCRIPT_TEMPLATE = """
   }}
 
   function maxPosition() {{
-    return Math.max(0, contentTopOffset + content.scrollHeight - viewport.clientHeight);
+    // Scroll until the reading line reaches the bottom of the last
+    // highlightable line, not just until the content's bottom edge touches
+    // the viewport's bottom edge — otherwise the last line's words would
+    // never fully cross the reading line and its highlight would be cut
+    // short. See updateActiveWord() for why this matters.
+    if (lines.length === 0) {{
+      return Math.max(0, contentTopOffset + content.scrollHeight - viewport.clientHeight);
+    }}
+    const lastLine = lines[lines.length - 1];
+    return Math.max(0, lastLine.bottom - viewport.clientHeight * 0.5 + contentTopOffset);
   }}
 
   function pixelsPerSecond() {{
     return basePxPerWord() * WORDS_PER_SECOND_BASELINE * parseFloat(speedSlider.value);
   }}
 
+  function setActiveWord(el) {{
+    if (el === activeWordEl) return;
+    if (activeWordEl) {{ activeWordEl.classList.remove('word-unit--active'); }}
+    if (el) {{ el.classList.add('word-unit--active'); }}
+    activeWordEl = el;
+  }}
+
   function updateActiveWord() {{
-    if (wordUnits.length === 0) return;
-    // All words in the same visual row share the same Y position, so
-    // finding the word nearest the reading line geometrically can't tell
-    // them apart (it would stick to the row's first word). Instead, derive
-    // the active word directly from scroll progress: position advances by
-    // one basePxPerWord "unit" every time one word's worth of reading pace
-    // has elapsed, so dividing gives a word index that moves left-to-right,
-    // top-to-bottom in exact lockstep with the scroll speed.
-    let idx = Math.floor(position / basePxPerWord());
-    if (idx < 0) idx = 0;
-    if (idx > wordUnits.length - 1) idx = wordUnits.length - 1;
-    if (idx !== activeWordIndex) {{
-      if (activeWordIndex >= 0 && wordUnits[activeWordIndex]) {{
-        wordUnits[activeWordIndex].classList.remove('word-unit--active');
-      }}
-      wordUnits[idx].classList.add('word-unit--active');
-      activeWordIndex = idx;
+    if (lines.length === 0) return;
+    // Convert the reading line's fixed viewport position into the same
+    // content-local Y coordinate as each line's [top, bottom) span.
+    const readingLineY = position + viewport.clientHeight * 0.5 - contentTopOffset;
+
+    if (readingLineY < lines[0].top) {{
+      setActiveWord(null); // nothing has reached the reading line yet
+      return;
     }}
+
+    for (let i = 0; i < lines.length; i++) {{
+      const line = lines[i];
+      if (readingLineY < line.bottom) {{
+        // This line is currently straddling the reading line. Progress
+        // (0 at the line's top, 1 at its bottom) is purely a function of
+        // the current position — not of elapsed time or a stored
+        // per-word duration — so a mid-line speed change is reflected
+        // correctly on the very next frame with no special-casing.
+        const progress = Math.min(1, Math.max(0, (readingLineY - line.top) / (line.bottom - line.top)));
+        let idx = Math.floor(progress * line.words.length);
+        if (idx > line.words.length - 1) idx = line.words.length - 1;
+        setActiveWord(line.words[idx]);
+        return;
+      }}
+    }}
+
+    // Past every line (only reachable right at/after maxPosition): keep the
+    // last word of the last line highlighted rather than clearing it.
+    const lastLine = lines[lines.length - 1];
+    setActiveWord(lastLine.words[lastLine.words.length - 1]);
   }}
 
   function applyPosition() {{

@@ -7,9 +7,10 @@ from deck_selector import select_deck
 
 _COMPONENT_HEIGHT = 560
 
-# Natural speaking pace baseline for the 1.0x speed setting: ~150 words per
-# minute is a commonly cited average conversational rate.
-_WORDS_PER_SECOND_BASELINE = 2.5
+# Baseline pace for the 1.0x speed setting, in words per second. ~150 wpm
+# (2.5 wps) reads as sluggish for the active-word highlight, so this is
+# pushed up to a brisker ~210 wpm.
+_WORDS_PER_SECOND_BASELINE = 3.5
 
 _STYLE = """
 <style>
@@ -33,7 +34,7 @@ _STYLE = """
   }
   .shadow-content {
     position: absolute;
-    top: 32px;
+    top: 50%;
     left: 28px;
     right: 28px;
   }
@@ -151,8 +152,13 @@ _SCRIPT_TEMPLATE = """
   // transform changes).
   let wordUnits = [];
   let activeWordIndex = -1;
+  // #shadow-content starts at top:50% (below the reading line) rather than
+  // the viewport's top edge, so the scrollable distance needed to bring its
+  // last line up to the viewport's bottom edge must include that offset.
+  let contentTopOffset = 0;
 
   function cacheWordPositions() {{
+    contentTopOffset = content.offsetTop;
     wordUnits = Array.from(content.querySelectorAll('.word-unit'));
   }}
 
@@ -165,7 +171,7 @@ _SCRIPT_TEMPLATE = """
   }}
 
   function maxPosition() {{
-    return Math.max(0, content.scrollHeight - viewport.clientHeight);
+    return Math.max(0, contentTopOffset + content.scrollHeight - viewport.clientHeight);
   }}
 
   function pixelsPerSecond() {{

@@ -2,45 +2,20 @@ import csv
 import os
 import re
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import List, Optional
+
+from vocabulary_metadata import (
+    CATEGORY_KEYWORDS,
+    FIRST_PERSON,
+    FORMAL_WORDS,
+    SECOND_PERSON,
+    SEQUENCE_CONNECTIVES,
+)
 
 # Accepted CSV column names, mirroring deck_loader.py's aliases, kept here
 # (rather than imported) so this module has no dependency on deck_loader.
 _VIETNAMESE_COLUMNS = ("vietnamese_text", "vietnamese_meaning")
 _ENGLISH_COLUMNS = ("english_text", "english_meaning")
-
-CONTENT_TYPES = ("news", "conversation", "talk", "story_telling")
-LEVELS = ("easy", "medium", "hard")
-
-# Keyword -> category lookup used to auto-detect 1-3 topic tags per deck.
-# Counts are summed per category and the top matches (by hit count) win.
-_CATEGORY_KEYWORDS: Dict[str, List[str]] = {
-    "food": ["cookie", "cookies", "bake", "baking", "flour", "sugar", "chocolate",
-             "recipe", "ingredient", "ingredients", "vanilla", "dough", "oven",
-             "biscuit", "biscuits", "cocoa"],
-    "manufacturing": ["factory", "factories", "machine", "machinery", "production",
-                       "assembly", "conveyor", "industrial", "produce", "produced"],
-    "nature": ["forest", "village", "nature", "silence", "northern lights",
-               "winter", "mountain", "sweden"],
-    "lifestyle": ["life", "journey", "home", "dream", "passion", "moved", "roots"],
-    "technology": ["ai", "artificial intelligence", "data", "digital", "computing",
-                   "technology", "infrastructure"],
-    "government_policy": ["strategy", "government", "policy", "ministry", "governance",
-                           "national", "agencies", "officials"],
-    "business": ["business", "company", "brand", "employed", "administrator"],
-    "family": ["mother", "father", "husband", "family"],
-    "art": ["photography", "art", "artist", "paint", "music", "writing", "photographer"],
-    "education": ["training", "education", "university", "skills", "students", "majors"],
-    "economy": ["economy", "economic", "billion", "million", "percent"],
-}
-
-_FIRST_PERSON = {"i", "i'm", "my", "me", "myself", "i've", "i'll", "i'd"}
-_SECOND_PERSON = {"you", "your", "you're", "yours"}
-_SEQUENCE_CONNECTIVES = {"then", "next", "after", "once", "finally", "first", "soon",
-                          "later", "meanwhile"}
-_FORMAL_WORDS = {"strategy", "government", "governance", "percent", "billion", "million",
-                  "policy", "framework", "national", "officials", "agencies", "ministry",
-                  "economy", "digital"}
 
 
 def get_project_root() -> str:
@@ -114,12 +89,12 @@ def _detect_content_type(text: str) -> str:
         return ""
     lower_words = [w.lower().strip(".,;:!\"()") for w in words]
 
-    first_person = sum(1 for w in lower_words if w in _FIRST_PERSON) / n_words
-    second_person = sum(1 for w in lower_words if w in _SECOND_PERSON) / n_words
+    first_person = sum(1 for w in lower_words if w in FIRST_PERSON) / n_words
+    second_person = sum(1 for w in lower_words if w in SECOND_PERSON) / n_words
     question_ratio = sum(1 for s in sentences if s.strip().endswith("?")) / max(1, len(sentences))
     contractions = sum(1 for w in words if "'" in w) / n_words
-    connectives = sum(1 for w in lower_words if w in _SEQUENCE_CONNECTIVES) / n_words
-    formal = sum(1 for w in lower_words if w in _FORMAL_WORDS) / n_words
+    connectives = sum(1 for w in lower_words if w in SEQUENCE_CONNECTIVES) / n_words
+    formal = sum(1 for w in lower_words if w in FORMAL_WORDS) / n_words
     past_tense = sum(1 for w in lower_words if w.endswith("ed") and len(w) > 3) / n_words
     numbers = sum(1 for w in words if any(c.isdigit() for c in w) or "%" in w) / n_words
 
@@ -137,10 +112,10 @@ def _detect_content_type(text: str) -> str:
 
 def _detect_category_tags(text: str, max_tags: int = 3) -> List[str]:
     """Auto-detect 1-3 topic tags via keyword frequency matching against
-    _CATEGORY_KEYWORDS. Falls back to ["general"] if nothing matches."""
+    CATEGORY_KEYWORDS. Falls back to ["general"] if nothing matches."""
     lower_text = text.lower()
     scores = {}
-    for category, keywords in _CATEGORY_KEYWORDS.items():
+    for category, keywords in CATEGORY_KEYWORDS.items():
         count = sum(lower_text.count(kw) for kw in keywords)
         if count:
             scores[category] = count
